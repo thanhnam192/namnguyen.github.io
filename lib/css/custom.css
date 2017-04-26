@@ -1,0 +1,12 @@
+.reveal .padding{
+	padding:15px;
+}
+.move .top-left{
+position:absolute;
+	animation: move 1s infinite	;
+
+}
+@keyframes move {
+    0%{ left:0;top:0;opacity:1}
+    100% { left:100px;top:100px;opacity:0 }
+}

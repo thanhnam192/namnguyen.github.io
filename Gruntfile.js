@@ -98,7 +98,8 @@ module.exports = function(grunt) {
 					port: port,
 					base: root,
 					livereload: true,
-					open: true
+					open: true,
+					hostname:"localhost"
 				}
 			},
 
@@ -117,6 +118,11 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+			slides:{
+				files: [ 'index.html', 'slides/*.html' ],
+
+			},
+
 			js: {
 				files: [ 'Gruntfile.js', 'js/reveal.js' ],
 				tasks: 'js'
