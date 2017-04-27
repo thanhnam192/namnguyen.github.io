@@ -1,9 +1,18 @@
 .reveal .padding{
 	padding:15px;
 }
-.move .top-left{
-position:absolute;
-	animation: move 1s infinite	;
+.state1 img{
+	    width: 500px;
+    display: block;
+    /* height: 300px; */
+    margin: 20px auto !important;
+
+}
+
+
+.mvcFeature.state2{
+	position:absolute;
+	animation: move 3s	;
 
 }
 @keyframes move {

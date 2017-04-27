@@ -1,12 +1,6 @@
 var app = angular.module("app",[]);
 app.controller("ctr",function($scope,slides,$timeout){
-	$scope.var = "hieu"
 	var slidesFolder = "slides/"
-	$scope.changeName = function(){
-		$scope.var = "name is changed"
-		
-		
-	}
 	$scope.sections = slides
 	
 	$scope.getSection = function(section){

@@ -150,7 +150,20 @@ module.exports = function(grunt) {
 			js: ['js/reveal.js', 'lib/js/*.js', 'plugin/**/*.js'],
 			node: ['.'],
 			options: {}
-		}
+		},
+	
+  sass: {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: 'styles',
+        src: ['*.scss'],
+        dest: '../public',
+        ext: '.css'
+      }]
+    }
+  }
+
 
 	});
 
