@@ -2,17 +2,39 @@
 <div ng-controller="ctr4">
 	<div style="height:500px;width:1000px;position:relative;"  >
 
-		<div class=" mvcFeature" ng-click="click('mvcState','state2')" ng-class="mvcState">
+		<div class="fragment mvcFeature feature" ng-click="mvcState='state2'" ng-class="mvcState">
 			<span class="padding bg-primary">Clean MVC</span>
 			<img src="resources/MVC.png" />
 		</div>
-	<span class="bg-success padding">Two-way data binding</span>
-	<span class="bg-warning padding">Reusable components</span>
-	<span class="bg-info padding">Dependency Injection</span>
 
-	<span class="fragment padding">Reduce code</span>
-	<span class="fragment padding">Less effort</span>
-	<span class="fragment padding">Less bug</span>
+		<div class="fragment bindingFeature feature" ng-click="click('bindingState','state2')" ng-class="bindingState">
+			<span class="padding bg-primary">Two-way data binding</span>
+			<img src="resources/MVC.png" />
+		</div>
+
+		<div class="fragment reuseFeature feature" ng-click="click('reuseState','state2')" ng-class="reuseState">
+			<span class="padding bg-primary">Reusable components</span>
+			<img src="resources/MVC.png" />
+		</div>
+
+		<div class="fragment injectFeature feature" ng-click="click('injectState','state2')" ng-class="injectState">
+			<span class="padding bg-primary">Dependency Injection</span>
+			<img src="resources/MVC.png" />
+		</div>
+	
+
+	<div class="fragment padding fragment reduceCode absolute animated pulse infinite">
+	<img src="resources/arrow.png" class="left-top-arrow arrow">
+	<img src="resources/arrow.png" class="left-bottom-arrow arrow">
+	<img src="resources/arrow.png" class="right-top-arrow arrow">
+	<img src="resources/arrow.png" class="right-bottom-arrow arrow">
+
+		<span class="text">Reduce code</span>
+
+
+	</div>
+	<span class="fragment padding fragment lessEffort absoute">Less effort</span>
+	<span class="fragment padding fragment lessBug absoute">Less bug</span>
 
 
 	</div>

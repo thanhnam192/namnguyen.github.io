@@ -33,25 +33,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		sass: {
-			core: {
-				files: {
-					'css/reveal.css': 'css/reveal.scss',
-				}
-			},
-			themes: {
-				files: [
-					{
-						expand: true,
-						cwd: 'css/theme/source',
-						src: ['*.scss'],
-						dest: 'css/theme',
-						ext: '.css'
-					}
-				]
-			}
-		},
-
+	
 		autoprefixer: {
 			dist: {
 				src: 'css/reveal.css'
@@ -122,19 +104,16 @@ module.exports = function(grunt) {
 				files: [ 'index.html', 'slides/*.html' ],
 
 			},
+			scss:{
+				files: [ 'scss/*.scss' ],
+					tasks: 'sass'
+			},
 
 			js: {
 				files: [ 'Gruntfile.js', 'js/reveal.js' ],
 				tasks: 'js'
 			},
-			theme: {
-				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-				tasks: 'css-themes'
-			},
-			css: {
-				files: [ 'css/reveal.scss' ],
-				tasks: 'css-core'
-			},
+			
 			html: {
 				files: root.map(path => path + '/*.html')
 			},
@@ -154,12 +133,16 @@ module.exports = function(grunt) {
 	
   sass: {
     dist: {
+    	options:{
+ sourcemap:'none'
+    	},
       files: [{
         expand: true,
-        cwd: 'styles',
+        cwd: 'scss',
         src: ['*.scss'],
-        dest: '../public',
-        ext: '.css'
+        ext: '.css',
+         dest: 'scss',
+        
       }]
     }
   }
@@ -173,11 +156,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 	grunt.loadNpmTasks( 'grunt-retire' );
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
