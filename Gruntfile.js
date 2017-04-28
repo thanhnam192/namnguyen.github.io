@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 
 			},
 			scss:{
-				files: [ 'scss/*.scss' ],
+				files: [ 'styles/**/*.scss' ],
 					tasks: 'sass'
 			},
 
@@ -138,10 +138,10 @@ module.exports = function(grunt) {
     	},
       files: [{
         expand: true,
-        cwd: 'scss',
+        cwd: 'styles/scss',
         src: ['*.scss'],
         ext: '.css',
-         dest: 'scss',
+         dest: 'styles/css',
         
       }]
     }

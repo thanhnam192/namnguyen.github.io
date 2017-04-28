@@ -3,7 +3,7 @@
 }
 
 .absolute {
-    position: absolute;
+    position: absolute;   
 }
 
 .feature {
@@ -11,7 +11,7 @@
            width: 300px;
     height: 120px;
         display: flex;
-        justify-content: center;
+        justify-content: center; 
         align-items: center;
         margin: auto;
 
@@ -19,7 +19,7 @@
 
     .span {
         width: 250px;
-        border-radius: 50%;
+        border-radius: 50%; 
         height: 250px;
         overflow: hidden;
         padding: 0;
@@ -85,7 +85,7 @@
 
 .arrow{
 	border: none !important;
-    background: transparent !important;
+    background: transparent !important; 
     box-shadow: none !important;
     position: absolute !important;
     width: 100px;

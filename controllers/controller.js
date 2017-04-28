@@ -26,7 +26,7 @@ app.controller("ctr",function($scope,slides,$timeout){
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-	},2)
+	},1000)
 
 	
 })
