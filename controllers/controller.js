@@ -1,4 +1,4 @@
-var app = angular.module("app",[]);
+var app = angular.module("app",['ngAnimate','frapontillo.bootstrap-switch']);
 app.controller("ctr",function($scope,slides,$timeout){
 	var slidesFolder = "slides/"
 	$scope.sections = slides
@@ -13,6 +13,8 @@ app.controller("ctr",function($scope,slides,$timeout){
 				progress: true,
 				history: true,
 				center: true,
+				width: 1200,
+	height: 700,
 
 				transition: 'concave', // none/fade/slide/convex/concave/zoom
 
