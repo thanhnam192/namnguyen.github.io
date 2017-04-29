@@ -1,9 +1,12 @@
 <h2>Two-Way Data Binding</h2>
 
-<div ng-controller="two_way_db">
-	Name : <input type="text" ng-model="name" style="color: #ff0000;" />
-	<br/><br/>
-	<b>Hello <span style="color: #ff0000;">{{name}}</span></b>
+<div ng-controller="two_way_db" class="form-inline" >
+    <div class="input-group-lg">
+        <label>Name:</label>
+        <input type="text" ng-model="name" class="nam_text form-group form-control" />
+    </div>
+	<br/>
+	<b>Hello <span class="nam_text">{{name}}</span></b>
     <br/><br/>
     <button ng-click="changeModel()" class="btn btn-primary btn-lg">Click me to change Model</button>
 </div>
