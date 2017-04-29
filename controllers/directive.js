@@ -1,6 +1,7 @@
 app.directive("searchField",function(){
     return {
         restrict : 'E',
+        scope:{},
         template : '<div>' +
             '<input type="text" ng-model="value" class="nam_text" />' +
             '<button class="nam_btn"  ng-click="onSubmit()">Search</button>' +
