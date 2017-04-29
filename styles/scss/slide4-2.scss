@@ -39,33 +39,33 @@
         margin: 20px auto !important;
     }
 
-    &.state2 {
+    &.visible:not(.current-fragment) {
         img {
             opacity: 0;
         }
     }
 }
 
-.mvcFeature {
-    &.state2 {
+.mvcFeature:not(.current-fragment) {
+    &.visible {
         transform: translate(-400px, 0);
     }
 }
 
-.bindingFeature {
-    &.state2 {
+.bindingFeature:not(.current-fragment)  {
+    &.visible {
         transform: translate(400px, 0);
     }
 }
 
-.reuseFeature {
-    &.state2 {
+.reuseFeature:not(.current-fragment)  {
+    &.visible {
         transform: translate(400px, 300px);
     }
 }
 
-.injectFeature {
-    &.state2 {
+.injectFeature:not(.current-fragment) {
+    &.visible {
         transform: translate(-400px, 300px);
     }
 }

@@ -1,12 +1,12 @@
 var app = angular.module("app",['ngAnimate','frapontillo.bootstrap-switch']);
 app.controller("ctr",function($scope,slides,$timeout){
-	var slidesFolder = "slides/"
-	$scope.sections = slides
+	var slidesFolder = "slides/";
+	$scope.sections = slides;
 	
 	$scope.getSection = function(section){
 		return slidesFolder+section.contain+".html";
 		
-	}
+	};
 	$timeout(function(){
 		Reveal.initialize({
 				controls: true,

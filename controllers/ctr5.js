@@ -28,8 +28,8 @@ app.controller("ctr5",function($scope){
 	{
 		name:"React",
 		value:"28"
-	},
+	}
 	
 
 	]
-})
+});
