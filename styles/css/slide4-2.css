@@ -7,7 +7,7 @@
 .feature {
   transition: all 1s linear !important;
   left: 50%;
-  margin-left: -250px !important;
+  margin-left: -133px !important;
   position: absolute; }
   .feature span {
     width: 300px;
@@ -27,28 +27,37 @@
     padding-top: 33px !important; }
   .feature img {
     transition: all 1s linear;
-    width: 500px;
+    width: 700px;
     display: block;
-    margin: 20px auto !important; }
-  .feature.state2 img {
+    margin: 20px auto !important;
+    max-width: initial;
+    max-height: initial;
+    position: absolute; }
+  .feature.visible:not(.current-fragment) img {
     opacity: 0; }
 
-.mvcFeature.state2 {
+.bindingFeature img {
+  left: -50%;
+  margin-left: -45px !important; }
+.bindingFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 0); }
 
-.bindingFeature.state2 {
+.reuseFeature img {
+  left: -140px;
+  width: 600px; }
+.reuseFeature.visible:not(.current-fragment) {
   transform: translate(400px, 0); }
 
-.reuseFeature.state2 {
+.domManipulationFeature.visible:not(.current-fragment) {
   transform: translate(400px, 300px); }
 
-.injectFeature.state2 {
+.pluginFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 300px); }
 
 .reduceCode {
   width: 500px;
   height: 300px;
-  left: 250px;
+  left: 375px;
   top: 59px; }
   .reduceCode .text {
     top: 100px;
