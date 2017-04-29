@@ -2,9 +2,13 @@
   background-color: transparent;
   border: 1px solid #337ab7; }
   .reveal .dom-manipulation .panel .panel-content {
-    padding: 0 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center; }
+    .reveal .dom-manipulation .panel .panel-content button {
+      font-size: 1em; }
+    .reveal .dom-manipulation .panel .panel-content .bootstrap-switch-wrapper {
+      margin-right: 10px; }
 .reveal .dom-manipulation .hide-item {
   transition: all linear 0.5s; }
 .reveal .dom-manipulation .hide-item.ng-hide {
