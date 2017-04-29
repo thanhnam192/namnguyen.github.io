@@ -212,7 +212,10 @@
   transform: rotate(180deg) scale(1.1);
 }
 
-
+img {
+  transition: all .2s ease-in-out !important;
+}
+ 
 img:hover {
   transform: scale(1.3) !important;
 }
