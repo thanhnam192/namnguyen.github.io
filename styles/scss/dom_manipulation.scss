@@ -5,9 +5,17 @@
             border: 1px solid #337ab7;
 
             .panel-content {
-                padding: 0 20px;
+                padding: 10px 20px;
                 display: flex;
                 align-items: center;
+                button{
+
+                    font-size: 0.7em; 
+                }
+
+                .bootstrap-switch-wrapper {
+                    margin-right: 10px;
+                }
             }
         }
 
