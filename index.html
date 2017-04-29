@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="styles/css/slide4-2.css">
 		<link rel="stylesheet" href="styles/css/slide5.css">
 		<link rel="stylesheet" href="styles/css/dom_manipulation.css">
+		<link rel="stylesheet" href="css/namStyle.css">
 		<script type="text/javascript" src="lib/js/jquery.js"></script>
 		<script type="text/javascript" src="lib/js/angular.js"></script>
 		<script type="text/javascript" src="lib/js/angular-animate.js"></script>
@@ -26,6 +27,8 @@
 		<script src="controllers/controller.js"></script>
 		<script src="controllers/ctr4.js"></script>
 		<script src="controllers/ctr5.js"></script>
+		<script src="controllers/two_way_db_ctr.js"></script>
+		<script src="controllers/directive.js"></script>
 		<script src="controllers/dom_manipulation.js"></script>
 		<script src="slides.js"></script>
 		<!-- Printing and PDF exports -->
@@ -50,14 +53,26 @@
 				</section>
 				<section >
 				<section ng-include="'slides/4.html'"></section>
-						<section ng-include="'slides/4-2.html'"></section>
+					<section ng-include="'slides/4-2.html'"></section>
 					<section ng-include="'slides/4-3.html'"></section>
 				</section>
-		<section >
-		<section ng-include="'slides/5.html'"></section>
-		<section ng-include="'slides/dom_manipulation.html'"></section>
-</section>
-</div>
+				<section >
+					<section ng-include="'slides/5.html'"></section>
+					<section ng-include="'slides/dom_manipulation.html'"></section>
+				</section>
+
+
+				<section>
+					<section ng-include="'slides/two_way_db.html'"></section>
+					<section ng-include="'slides/two_way_db_demo.html'"></section>
+				</section>
+
+				<section>
+					<section ng-include="'slides/directive.html'"></section>
+					<section ng-include="'slides/directive_2.html'"></section>
+					<section ng-include="'slides/directive_3.html'"></section>
+				</section>
+			</div>
 </div>
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
