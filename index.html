@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>reveal.js</title>\
+		<title>reveal.js</title>
 				<link rel="stylesheet" href="lib/css/bootstrap.css">
 
 		<link rel="stylesheet" href="css/reveal.css">
@@ -13,15 +13,17 @@
 				<link rel="stylesheet" href="lib/css/magic.css">
 
 		<link rel="stylesheet" href="styles/css/slide4-2.css">
+		<link rel="stylesheet" href="styles/css/mvc.css">
 			<script type="text/javascript" src="lib/js/jquery.js"></script>
 			<script type="text/javascript" src="lib/js/angular.js"></script>
 			<script type="text/javascript" src="lib/js/bootstrap.js"></script>
-
+			
 
 		
 		
 		<script src="controllers/controller.js"></script>
 		<script src="controllers/ctr4.js"></script>
+		<script src="controllers/mvc.js"></script>
 		<script src="slides.js"></script>
 		<!-- Printing and PDF exports -->
 		<script>
@@ -51,12 +53,16 @@
 						<section >						
 						<section ng-include="'slides/5.html'"></section>
 						</section>
-						
+						<section>
+							<section ng-include="'slides/mvc.html'"></section>
+							<section ng-include="'slides/mvc-1.html'" data-state="mvcState"></section>
+						</section>
 						
 					</div>
 				</div>
 				<script src="lib/js/head.min.js"></script>
 				<script src="js/reveal.js"></script>
+				
 				<script>
 				
 					
