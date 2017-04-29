@@ -41,7 +41,9 @@ activeFirst();
 Reveal.addEventListener( 'mvcState', function() {
 	slides.css({"zoom": "1", "height": "100%"})
 	$('pre code').each(function(i, block) {
-	  	hljs.highlightBlock(block);
+	  	setTimeout(function() {
+	  		hljs.highlightBlock(block);
+	  	}, 100)
 	});
 });
 
