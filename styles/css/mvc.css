@@ -51,7 +51,7 @@
   font-size: 20px;
 }
 .com__section--text img {
-  max-width: 250px;
+  max-width: 600px;
   margin: 0 auto !important;
 }
 .com__section--text.centered {
@@ -211,3 +211,10 @@
 .logo img:hover {
   transform: rotate(180deg) scale(1.1);
 }
+
+
+img:hover {
+  transform: scale(1.3) !important;
+}
+
+

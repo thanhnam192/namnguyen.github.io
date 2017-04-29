@@ -45,3 +45,9 @@ Reveal.addEventListener( 'mvcState', function() {
 Reveal.addEventListener( 'slidechanged', function( event ) {
 	//console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
 } );
+
+$('img').off('mouseover').off('mouseout').on('mouseover', function() {
+	$('h2').css('color', '#404855')
+}).on('mouseout', function() {
+	$('h2').css('color', 'white')
+})
