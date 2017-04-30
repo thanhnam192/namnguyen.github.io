@@ -12,7 +12,13 @@
     "Hakim El Hattab <hakim.elhattab@gmail.com>"
   ],
   "dependencies": {
-    "headjs": "~1.0.3"
+    "jquery": "3.2.1",
+    "angular": "1.5.6",
+    "angular-animate": "1.5.6",
+    "bootstrap": "3.3.7",
+    "angular-bootstrap-switch": "^0.5.2",
+    "angular-carousel": "^1.0.1",
+        "angular-touch":"1.5.6"
   },
   "repository": {
     "type": "git",
@@ -23,5 +29,9 @@
     "node_modules",
     "bower_components",
     "test"
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.5.6",
+    "angular-touch":"1.5.6"
+  }
 }

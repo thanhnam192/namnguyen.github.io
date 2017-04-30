@@ -1,0 +1,5 @@
+ul[rn-carousel] {
+  height: 200px;
+  width: 100%; }
+  ul[rn-carousel] li {
+    text-align: center; }

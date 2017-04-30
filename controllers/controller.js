@@ -1,7 +1,7 @@
-var app = angular.module("app",['ngAnimate','frapontillo.bootstrap-switch']);
-app.controller("ctr",function($scope,slides,$timeout){
+var app = angular.module("app",['ngAnimate','ngTouch','angular-carousel','frapontillo.bootstrap-switch']);
+app.controller("ctr",function($scope,$timeout){
 	var slidesFolder = "slides/";
-	$scope.sections = slides;
+	
 	
 	$scope.getSection = function(section){
 		return slidesFolder+section.contain+".html";
