@@ -1,8 +1,55 @@
 [class*='col-']{
-	padding:0 15px !important;
+    padding:0 15px !important;
+    margin-bottom: 10px !important;
 }
 .form-control{
-	color:black;
-	font-size:0.9em !important;
+    color:black;
+    font-size:0.9em !important;
+}
+@mixin animate-list($animation1,$animation2,$animation3) {
+    li{
+        &.current-fragment {
+            &:nth-child(1){
+                h3{
+                    animation-name: $animation1;
+                }
+            }
+            &:nth-child(2){
+                h3{
+                    animation-name: $animation2;
+                }
+            }
+            &:nth-child(3){
+                h3{
+                    animation-name: $animation3;
+                }
 
+            }
+            h3{
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                animation-name: $animation1;
+            }
+        }
+    }
+}
+
+ul{
+    &.bounce{
+        @include animate-list(bounceInLeft,bounceInRight,bounceInDown);  
+    }
+    &.rollIn{
+        @include animate-list(rollIn,rollIn,rollIn);  
+
+    }
+    &.rotate{
+        @include animate-list(rotateInUpLeft,rotateInUpRight,rotateInDownLeft);  
+
+    }
+     &.light-speed{
+        @include animate-list(jackInTheBox,jackInTheBox,jackInTheBox);  
+
+    } 
 }

@@ -36,7 +36,7 @@
   .feature.visible:not(.current-fragment) img {
     animation-name: blur-image;
     animation-duration: 1s;
-    opacity: 0; }
+    animation-fill-mode: forwards; }
 
 .bindingFeature img {
   left: -50%;
