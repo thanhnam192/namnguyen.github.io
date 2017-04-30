@@ -33,7 +33,7 @@
   position: absolute;
 
   img {
-    transition: all 1s linear;
+    transition: all 3s linear;
     width: 700px;
     display: block;
     margin: 20px auto !important;
@@ -44,9 +44,13 @@
 
   &.visible:not(.current-fragment) {
     img {
-      opacity: 0;
+       animation-name: blur-image ;
+        animation-duration: 1s;
+        opacity:0;
+      
     }
   }
+
 }
 
 .bindingFeature {
@@ -70,12 +74,20 @@
 }
 
 .domManipulationFeature {
+   img {
+    left: -50%;
+    margin-left: -45px !important;
+  }
   &.visible:not(.current-fragment) {
     transform: translate(400px, 300px);
   }
 }
 
 .pluginFeature {
+    img {
+    left: -50%;
+    margin-left: -45px !important;
+  }
   &.visible:not(.current-fragment) {
     transform: translate(-400px, 300px);
   }
@@ -133,35 +145,7 @@
   bottom: 0;
   transform: rotate(180deg);
 }
-
-@keyframes move-left {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(-300px, 0);
-  }
-}
-
-@keyframes move-right {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(300px, 0);
-  }
-}
-
-@keyframes move-bottom-left {
-  100% {
-    transform: translate(-100px, 0);
-  }
-}
-
-@keyframes move-bottom-right {
-  100% {
-    transform: translate(-100px, 0);
-  }
+@keyframes blur-image {
+    from {opacity: 1;}
+    to {opacity:0}
 }
