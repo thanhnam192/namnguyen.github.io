@@ -1,6 +1,56 @@
 [class*='col-'] {
-  padding: 0 15px !important; }
+  padding: 0 15px !important;
+  margin-bottom: 10px !important; }
 
 .form-control {
   color: black;
   font-size: 0.9em !important; }
+
+ul.bounce li.current-fragment:nth-child(1) h3 {
+  animation-name: bounceInLeft; }
+ul.bounce li.current-fragment:nth-child(2) h3 {
+  animation-name: bounceInRight; }
+ul.bounce li.current-fragment:nth-child(3) h3 {
+  animation-name: bounceInDown; }
+ul.bounce li.current-fragment h3 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: bounceInLeft; }
+ul.rollIn li.current-fragment:nth-child(1) h3 {
+  animation-name: rollIn; }
+ul.rollIn li.current-fragment:nth-child(2) h3 {
+  animation-name: rollIn; }
+ul.rollIn li.current-fragment:nth-child(3) h3 {
+  animation-name: rollIn; }
+ul.rollIn li.current-fragment h3 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: rollIn; }
+ul.rotate li.current-fragment:nth-child(1) h3 {
+  animation-name: rotateInUpLeft; }
+ul.rotate li.current-fragment:nth-child(2) h3 {
+  animation-name: rotateInUpRight; }
+ul.rotate li.current-fragment:nth-child(3) h3 {
+  animation-name: rotateInDownLeft; }
+ul.rotate li.current-fragment h3 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: rotateInUpLeft; }
+ul.light-speed li.current-fragment:nth-child(1) h3 {
+  animation-name: jackInTheBox; }
+ul.light-speed li.current-fragment:nth-child(2) h3 {
+  animation-name: jackInTheBox; }
+ul.light-speed li.current-fragment:nth-child(3) h3 {
+  animation-name: jackInTheBox; }
+ul.light-speed li.current-fragment h3 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: jackInTheBox; }

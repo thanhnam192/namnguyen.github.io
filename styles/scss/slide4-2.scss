@@ -46,7 +46,7 @@
     img {
        animation-name: blur-image ;
         animation-duration: 1s;
-        opacity:0;
+        animation-fill-mode: forwards;
       
     }
   }
