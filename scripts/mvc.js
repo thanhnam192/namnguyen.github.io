@@ -5,6 +5,7 @@ var sectionContent = section.find('*');
 var slides = $('.slides');
 
 var switchTab = function() {
+
 	var p = $(this).parent('li');
 	var i  = p.index();
 	var s = section.eq(i);
@@ -22,6 +23,8 @@ var switchTab = function() {
 	linkParent.removeClass('active');
 	p.addClass('active');
 	
+	mvcSlides.setCurrent(i);
+
 	return false;
 };
 
@@ -57,3 +60,55 @@ $('img').off('mouseover').off('mouseout').on('mouseover', function() {
 	$('h2').css('color', 'white')
 })
 
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        var prev = mvcSlides.prev();
+        $(prev).find('a').trigger('click');
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        var next = mvcSlides.next();
+        $(next).find('a').trigger('click');
+    }
+}
+
+function TraversableArray() {
+	if (typeof arguments[0] === "number")
+        this.length = arguments[0];
+    else this.push.apply(this, arguments);
+
+    this.current = 0;
+}
+
+TraversableArray.prototype = [];
+TraversableArray.prototype.constructor = TraversableArray;
+TraversableArray.prototype.next = function() {
+	var self = this[0];
+	var index = ++this.current;
+	if(this.current == self.length) {
+		this.current = 0;
+	}
+	
+    return self[index%self.length];
+};
+TraversableArray.prototype.prev = function() {
+	var self = this[0];
+	var index = --this.current;
+	if(this.current + self.length <= 0) {
+		this.current = 0;
+	}
+	
+    return self[(index + self.length)%self.length];
+};
+
+TraversableArray.prototype.setCurrent = function(current) {
+	this.current = current;
+}
+
+var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent))
