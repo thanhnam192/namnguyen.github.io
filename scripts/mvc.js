@@ -5,7 +5,6 @@ var sectionContent = section.find('*');
 var slides = $('.slides');
 
 var switchTab = function() {
-
 	var p = $(this).parent('li');
 	var i  = p.index();
 	var s = section.eq(i);
@@ -23,8 +22,6 @@ var switchTab = function() {
 	linkParent.removeClass('active');
 	p.addClass('active');
 	
-	mvcSlides.setCurrent(i);
-
 	return false;
 };
 
@@ -79,13 +76,13 @@ function checkKey(e) {
 }
 
 function TraversableArray() {
-	if (typeof arguments[0] === "number")
+	console.log(arguments);
+    if (typeof arguments[0] === "number")
         this.length = arguments[0];
     else this.push.apply(this, arguments);
 
     this.current = 0;
 }
-
 TraversableArray.prototype = [];
 TraversableArray.prototype.constructor = TraversableArray;
 TraversableArray.prototype.next = function() {
@@ -106,9 +103,5 @@ TraversableArray.prototype.prev = function() {
 	
     return self[(index + self.length)%self.length];
 };
-
-TraversableArray.prototype.setCurrent = function(current) {
-	this.current = current;
-}
 
 var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent))
