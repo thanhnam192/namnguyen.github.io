@@ -3,15 +3,8 @@
     margin: auto !important;
     height: 700px; 
     position:relative;
-    [class*=piece]{
 
-        img{
-            width: 250px;
-            height: auto;
-            max-width: initial;
-        }
-
-    }
+    $move-down:476px;
 
     .piece1{
         &.visible{
@@ -79,8 +72,8 @@
             top: 0;
             left: 0;
             z-index: 99;
-            width: 250px;
-            height: 170px;
+            width: 128px;
+            height: 111px;
             display: inline-block;
         }
     }
@@ -89,9 +82,14 @@
         bottom: 0;
         left:0;
         width: 100%;
-        height: 200px;
+        height: 250px;
         display: flex;
         justify-content: space-between;
+        img{
+            width: 250px;
+            height: auto;
+            max-width: initial;
+        }
 
     }
     @keyframes move-down{
@@ -118,10 +116,9 @@
         from{
             transform:   translateY(100px) rotate(1deg);
         }
-        
+
         to{
-            transform:   translate(-382px, 493px) rotate(-360deg) ;
-        }
+            transform:   translate(-277px, $move-down) rotate(-360deg) ;        }
 
 
     }
@@ -132,19 +129,19 @@
         }
 
         to{
-            transform:   translate(-7px, 493px)  rotate(-360deg);
+            transform:   translate(97px, $move-down)  rotate(-360deg);
         }
 
 
     }
     @keyframes go-right{
-        
+
         from{
             transform:   translateY(100px) rotate(1deg);
         }
 
         to{
-            transform:   translate(369px, 493px)  rotate(-360deg);
+            transform: translate(473px, 477px) rotate(-360deg);    
         }
 
 

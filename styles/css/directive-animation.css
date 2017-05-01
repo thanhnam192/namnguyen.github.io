@@ -3,10 +3,6 @@
   margin: auto !important;
   height: 700px;
   position: relative; }
-  .directive-animation [class*=piece] img {
-    width: 250px;
-    height: auto;
-    max-width: initial; }
   .directive-animation .piece1.visible:not(.current-fragment) {
     animation-name: go-left;
     animation-duration: 2s;
@@ -37,8 +33,8 @@
       top: 0;
       left: 0;
       z-index: 99;
-      width: 250px;
-      height: 170px;
+      width: 128px;
+      height: 111px;
       display: inline-block; }
       .directive-animation .pieces img.visible.current-fragment {
         animation-name: move-down;
@@ -51,9 +47,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 200px;
+    height: 250px;
     display: flex;
     justify-content: space-between; }
+    .directive-animation .widthout-piece img {
+      width: 250px;
+      height: auto;
+      max-width: initial; }
 @keyframes move-down {
   from {
     opacity: 0; }
@@ -68,14 +68,14 @@
   from {
     transform: translateY(100px) rotate(1deg); }
   to {
-    transform: translate(-382px, 493px) rotate(-360deg); } }
+    transform: translate(-277px, 476px) rotate(-360deg); } }
 @keyframes go-center {
   from {
     transform: translateY(100px) rotate(1deg); }
   to {
-    transform: translate(-7px, 493px) rotate(-360deg); } }
+    transform: translate(97px, 476px) rotate(-360deg); } }
 @keyframes go-right {
   from {
     transform: translateY(100px) rotate(1deg); }
   to {
-    transform: translate(369px, 493px) rotate(-360deg); } }
+    transform: translate(473px, 477px) rotate(-360deg); } }
