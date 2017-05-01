@@ -1,0 +1,149 @@
+.directive-animation{
+    width: 1000px;
+    margin: auto !important;
+    height: 700px; 
+    position:relative;
+
+    $move-down:476px;
+
+    .piece1{
+        &.visible{
+            &:not(.current-fragment){
+                animation-name: go-left;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+
+            }
+        }
+
+
+    }
+    .piece2{
+        &.visible{
+            &:not(.current-fragment){
+                animation-name: go-center;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+
+            }
+        }
+
+    }
+    .piece3{ 
+        &.visible{
+            &:not(.current-fragment){
+                animation-name: go-right;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+
+            }
+        }
+
+    }
+
+
+    img{
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .pieces{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        margin-left: -100px !important;  
+
+        img{
+            &.visible.current-fragment{
+                animation-name: move-down;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+
+            }
+            &.fixed{
+                z-index: 999
+            }
+            transition: all 1s linear;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 128px;
+            height: 111px;
+            display: inline-block;
+        }
+    }
+    .widthout-piece{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 250px;
+            height: auto;
+            max-width: initial;
+        }
+
+    }
+    @keyframes move-down{
+
+        from{
+            opacity:0;
+        }
+        20%, 40%,60% ,80%{
+            opacity:1;
+        }
+        30%, 50%, 70%, 90%{
+            opacity:0;
+        }
+
+        to{
+            opacity:1;
+            transform: translateY(100px) ;
+        }
+
+
+    }
+    @keyframes go-left{
+
+        from{
+            transform:   translateY(100px) rotate(1deg);
+        }
+
+        to{
+            transform:   translate(-277px, $move-down) rotate(-360deg) ;        }
+
+
+    }
+    @keyframes go-center{
+
+        from{
+            transform:   translateY(100px) rotate(1deg);
+        }
+
+        to{
+            transform:   translate(97px, $move-down)  rotate(-360deg);
+        }
+
+
+    }
+    @keyframes go-right{
+
+        from{
+            transform:   translateY(100px) rotate(1deg);
+        }
+
+        to{
+            transform: translate(473px, 477px) rotate(-360deg);    
+        }
+
+
+    }
+}
