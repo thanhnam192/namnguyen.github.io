@@ -27,6 +27,13 @@
     height: 200px;
     left: 50%;
     margin-left: -100px !important; }
+    .directive-animation .pieces .my-directive {
+      position: absolute;
+      right: -160px;
+      top: 30px;
+      animation-name: my-directive;
+      animation-iteration-count: infinite;
+      animation-duration: 8s; }
     .directive-animation .pieces img {
       transition: all 1s linear;
       position: absolute;
@@ -42,7 +49,7 @@
         animation-fill-mode: both; }
       .directive-animation .pieces img.fixed {
         z-index: 999; }
-  .directive-animation .widthout-piece {
+  .directive-animation .widthout-piece, .directive-animation .views {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -50,10 +57,20 @@
     height: 250px;
     display: flex;
     justify-content: space-between; }
-    .directive-animation .widthout-piece img {
+    .directive-animation .widthout-piece img, .directive-animation .views img {
       width: 250px;
       height: auto;
       max-width: initial; }
+  .directive-animation .views {
+    bottom: 40px; }
+    .directive-animation .views div {
+      width: 250px; }
+      .directive-animation .views div.blue {
+        color: #0003fe; }
+      .directive-animation .views div.red {
+        color: #cd0100; }
+      .directive-animation .views div.green {
+        color: #01d101; }
 @keyframes move-down {
   from {
     opacity: 0; }
@@ -79,3 +96,10 @@
     transform: translateY(100px) rotate(1deg); }
   to {
     transform: translate(473px, 477px) rotate(-360deg); } }
+@keyframes my-directive {
+  0%,30%,60%,90% {
+    color: #0003fe; }
+  10%,40%,70%,100% {
+    color: #cd0100; }
+  20%,50%,80% {
+    color: #01d101; } }
