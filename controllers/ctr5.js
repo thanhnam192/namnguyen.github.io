@@ -11,7 +11,7 @@ app.controller("ctr5", function ($scope) {
         },
         {
             name: "PHP",
-            value: "30"
+            value: "35"
         },
 
         {
