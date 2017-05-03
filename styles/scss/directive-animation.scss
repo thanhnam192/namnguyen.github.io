@@ -1,20 +1,24 @@
 .directive-animation{
     width: 1000px;
     margin: auto !important;
-    height: 700px; 
+    height: 600px; 
     position:relative;
+    top: -40px;
 
-    $move-down:476px;
+    $move-down:377px;
     $red-color:#cd0100;
     $blue-color:#0003fe;
     $green-color:#01d101;
+    
+    
+    $go-down:150px;
 
     .piece1{
         &.visible{
             &:not(.current-fragment){
                 animation-name: go-left;
                 animation-duration: 2s;
-                animation-fill-mode: both;
+                animation-fill-mode: both; 
 
             }
         }
@@ -64,9 +68,9 @@
             right: -160px;
             top: 30px;
             animation-name: my-directive;
-              animation-iteration-count: infinite;
-              animation-duration: 8s;
-              
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+
 
         }
 
@@ -124,19 +128,16 @@
 
     @keyframes move-down{
 
-        from{
-            opacity:0;
-        }
         20%, 40%,60% ,80%{
             opacity:1;
         }
-        30%, 50%, 70%, 90%{
+        from,30%, 50%, 70%, 90%{
             opacity:0;
         }
 
         to{
             opacity:1;
-            transform: translateY(100px) ;
+            transform: translateY($go-down) ; 
         }
 
 
@@ -144,7 +145,7 @@
     @keyframes go-left{
 
         from{
-            transform:   translateY(100px) rotate(1deg);
+            transform:   translateY($go-down) rotate(1deg);
         }
 
         to{
@@ -155,7 +156,7 @@
     @keyframes go-center{
 
         from{
-            transform:   translateY(100px) rotate(1deg);
+            transform:   translateY($go-down) rotate(1deg);
         }
 
         to{
@@ -167,11 +168,11 @@
     @keyframes go-right{
 
         from{
-            transform:   translateY(100px) rotate(1deg);
+            transform:   translateY($go-down) rotate(1deg);
         }
 
         to{
-            transform: translate(473px, 477px) rotate(-360deg);    
+            transform: translate(473px, $move-down) rotate(-360deg);    
         }
 
 
@@ -192,7 +193,7 @@
 
         }   
 
-       
+
 
 
     }
