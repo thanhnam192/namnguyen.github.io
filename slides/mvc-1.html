@@ -59,64 +59,66 @@
         </section>
         <section class="com__section com__section--text ">
             <h2 class="animate slideInLeft ">How it work?</h2>
-            <div class="animate scaleIn delay-3">
-                <pre><code data-trim data-noescape class="javascript">
-						<strong>Controller</strong>
-						function MyController($scope) {
-							$scope.action = function() {
-								// do something
+            <div class="col-sm-12 wrapper-code">
+                <div class="animate scaleIn delay-3 col-sm-7">
+                    <pre><code data-trim data-noescape class="javascript">
+							<strong>Controller</strong>
+							function MyController($scope) {
+								$scope.action = function() {
+									// do something
+								}
+								$scope.name = 'world';
 							}
-							$scope.name = 'world';
+
+						</code></pre>
+                    <div class="controller popup">
+                        <div>Imperative
+                            <br/> behavior </div>
+                        <svg height="50" width="100">
+                            <path d="M0 50 L40 0 L65 0 Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="animate scaleIn delay-3 col-sm-5">
+                    <pre><code data-trim data-noescape class="javascript">
+						<strong>Scope</strong>
+						{
+							name: 'world',
+							action: function
 						}
 
 					</code></pre>
-                <div class="controller popup">
-                    <div>Imperative
-                        <br/> behavior </div>
-                    <svg height="50" width="100">
-                        <path d="M0 50 L40 0 L65 0 Z" />
-                    </svg>
+                    <div class="scope popup">
+                        <div>scope is
+                            <br/> the glue </div>
+                        <svg height="50" width="100">
+                            <path d="M0 50 L40 0 L65 0 Z" />
+                        </svg>
+                    </div>
                 </div>
-            </div>
-            <div class="animate scaleIn delay-3">
-                <pre><code data-trim data-noescape class="javascript">
-					<strong>Scope</strong>
-					{
-						name: 'world',
-						action: function
-					}
+                <div class="animate slideInLeft delay-2 col-sm-12">
+                    <pre><code data-trim data-noescape class="javascript">
+						<strong>View (DOM)</strong>
+						&lt;div ng-controller="MyController"&gt;
+							Hello { {name} }!
+							&lt;button ng-click="action()"&gt;
+								OK
+							&lt;/button&gt;
+						&lt;/div&gt;
 
-				</code></pre>
-                <div class="scope popup">
-                    <div>scope is
-                        <br/> the glue </div>
-                    <svg height="50" width="100">
-                        <path d="M0 50 L40 0 L65 0 Z" />
-                    </svg>
+					</code></pre>
+                    <div class="view popup">
+                        <div>Declarative
+                            <br/> view </div>
+                        <svg height="50" width="100">
+                            <path d="M0 50 L40 0 L65 0 Z" />
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div class="animate slideInLeft delay-2">
-                <pre><code data-trim data-noescape class="javascript">
-					<strong>View (DOM)</strong>
-					&lt;div ng-controller="MyController"&gt;
-						Hello { {name} }!
-						&lt;button ng-click="action()"&gt;
-							OK
-						&lt;/button&gt;
-					&lt;/div&gt;
-
-				</code></pre>
-                <div class="view popup">
-                    <div>Declarative
-                        <br/> view </div>
-                    <svg height="50" width="100">
-                        <path d="M0 50 L40 0 L65 0 Z" />
-                    </svg>
-                </div>
-            </div>
-        	<div class="block">
-            	<i class="hovicon effect-8">IO</i>
-            </div>
+            <!-- <div class="block">
+        	            	<i class="hovicon effect-8">IO</i>
+        	            </div> -->
         </section>
     </div>
     <nav class="com__nav">
@@ -178,4 +180,5 @@
         </ul>
     </nav>
 </div>
+
 <script type="text/javascript" src="scripts/mvc.js"></script>
