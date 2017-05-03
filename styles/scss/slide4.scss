@@ -20,10 +20,10 @@ ul[rn-carousel]{
                 animation-iteration-count: infinite;
             }
             &.rn-carousel-control-prev{
-                left: -1em ;
+                left: -30px ;
             }
             &.rn-carousel-control-next{
-                right:  -1em ;
+                right:  -30px;
             }
         }
     } 

@@ -14,9 +14,9 @@ ul[rn-carousel] {
     animation-duration: 1s;
     animation-iteration-count: infinite; }
   .reveal .rn-carousel-controls .rn-carousel-control.rn-carousel-control-prev {
-    left: -1em; }
+    left: -30px; }
   .reveal .rn-carousel-controls .rn-carousel-control.rn-carousel-control-next {
-    right: -1em; }
+    right: -30px; }
 
 @keyframes scale {
   from,to {
