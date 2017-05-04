@@ -1,10 +1,24 @@
 .twoway-db {
-  width: 1300px;
+  width: 1200px;
   height: 400px;
   background-color: white;
   color: black;
   margin: auto !important;
   position: relative; }
+  .twoway-db img.typing {
+    padding: initial;
+    position: absolute;
+    left: 110px;
+    bottom: 0;
+    width: 200px; }
+  .twoway-db img.variable {
+    padding: initial;
+    position: absolute;
+    right: 0px;
+    bottom: 100px;
+    width: 200px;
+    height: auto;
+    width: 375px; }
   .twoway-db .arrow {
     width: 500px;
     display: flex;
@@ -14,13 +28,27 @@
     .twoway-db .arrow img {
       box-shadow: none !important;
       border: none !important; }
+    .twoway-db .arrow.left-arrow .arrow-animate {
+      right: 50px;
+      animation-name: arrow-animate-topdown; }
+    .twoway-db .arrow.right-arrow .arrow-animate {
+      animation-name: arrow-animate-bottomup;
+      left: 5px; }
+    .twoway-db .arrow .arrow-animate {
+      position: absolute;
+      height: 80px;
+      width: 120px;
+      z-index: 999999;
+      background-color: white;
+      animation-duration: 2s;
+      animation-iteration-count: infinite; }
   .twoway-db .left-arrow {
     top: 30px;
     left: 30px; }
   .twoway-db .right-arrow {
     position: absolute;
     top: 30px;
-    right: 10px; }
+    right: 0px; }
   .twoway-db .wrapper {
     display: flex;
     justify-content: center; }
@@ -29,7 +57,7 @@
     top: 10px;
     width: 100%; }
     .twoway-db .model-wrapper .model {
-      width: 300px;
+      width: 150px;
       background-color: #009cd6;
       padding: 30px;
       border-radius: 50%; }
@@ -38,7 +66,28 @@
     top: 198px;
     width: 100%; }
     .twoway-db .view-wrapper .view {
-      width: 300px;
+      width: 150px;
       background-color: #84ce8c;
       padding: 30px;
       border-radius: 50%; }
+
+@keyframes arrow-animate-topdown {
+  from {
+    top: -28px;
+    height: 0px; }
+  50% {
+    top: -28px;
+    height: 283px; }
+  to {
+    top: 280px;
+    height: 0px; } }
+@keyframes arrow-animate-bottomup {
+  from {
+    bottom: 13px;
+    height: 0px; }
+  50% {
+    bottom: 13px;
+    height: 250px; }
+  to {
+    bottom: 250px;
+    height: 10px; } }
