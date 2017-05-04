@@ -1,0 +1,63 @@
+.twoway-db{
+    width:1300px;
+    height:400px;
+    background-color:white;
+    color:black;
+    margin:auto !important;
+    position:relative;
+
+    .arrow{
+        width: 500px;
+        display: flex;
+        align-items: center;
+        .text{
+            display: inline-block;
+        }
+        img{
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+    }
+    .left-arrow{
+        top: 30px;
+        left: 30px;
+    }
+    .right-arrow{
+        position: absolute;
+        top: 30px;
+        right: 10px;
+    }
+    .wrapper{
+        display: flex;
+        justify-content: center; 
+    }
+    .model-wrapper{
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        .model{
+            width: 300px;
+            background-color: #009cd6;
+            padding: 30px;
+            border-radius: 50%;
+        } 
+
+    }
+    .view-wrapper{
+        position: absolute;
+        top: 198px;
+        width: 100%;
+
+        .view{
+            width: 300px;
+
+
+            background-color: #84ce8c;
+            
+            padding: 30px;
+            border-radius: 50%;
+        }  
+    }
+
+}
