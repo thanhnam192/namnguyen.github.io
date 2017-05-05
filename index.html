@@ -4,6 +4,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>AngularJS</title>
+        <!-- build:js lib.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+        <script src="bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+        <!-- endbower -->    
+
+        <!-- endbuild --> 
+
+
+        <!-- build:js app.js -->
+
+        <script src="controllers/controller.js"></script>
+        <script src="controllers/ctr4.js"></script>
+        <script src="controllers/ctr5.js"></script>
+        <script src="controllers/dom_manipulation.js"></script>
+        <script src="controllers/two_way_db_ctr.js"></script>
+        <script src="controllers/directive.js"></script>
+        <script src="controllers/mvc.js"></script>
+        <script src="slides.js"></script>
+        <script type="text/javascript" src="scripts/mvc.js"></script>
+
+
+
+
+        <!-- endbuild -->
+        <!-- build:css app.css -->
         <link rel="stylesheet" href="lib/css/bootstrap.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
@@ -22,39 +54,22 @@
         <link rel="stylesheet" href="styles/css/live-code.css">
         <link rel="stylesheet" href="styles/css/directive-animation.css">
         <link rel="stylesheet" href="styles/css/twoway.css">
-        <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
-        <script src="bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
-        <!-- endbower -->
+
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
         <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
         <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
         <!-- endbower -->
 
+        <!-- endbuild -->
 
-        <script src="controllers/controller.js"></script>
-        <script src="controllers/ctr4.js"></script>
-        <script src="controllers/ctr5.js"></script>
-        <script src="controllers/dom_manipulation.js"></script>
-        <script src="controllers/two_way_db_ctr.js"></script>
-        <script src="controllers/directive.js"></script>
-        <script src="controllers/mvc.js"></script>
-        <script src="slides.js"></script>
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
-        </script>
+
+
+
+
+
+
+
     </head>
     <body ng-controller="ctr">
         <div class="reveal">
@@ -67,38 +82,39 @@
                 </section>
                 <section ng-include="'slides/3.html'">
                 </section>
-                <section>
-                    <section ng-include="'slides/4.html'"></section>
-                    <section ng-include="'slides/4-2.html'"></section>
+                <section  ng-include="'slides/4.html'">
+
 
                 </section>
-                <section>
-                    <section ng-include="'slides/5.html'"></section>
+                <section ng-include="'slides/4-2.html'"></section>
+
+                <section ng-include="'slides/5.html'">
                 </section>
 
                 <section ng-include="'slides/core_features.html'" data-background-transition="zoom" ></section>
-                <section >
-                    <section ng-include="'slides/mvc-1.html'" data-state="mvcState"></section>
+                <section  ng-include="'slides/mvc-1.html'" data-state="mvcState">
                 </section>
-                <section >
+                <section>
                     <section ng-include="'slides/two_way_db.html'"></section>
                     <section ng-include="'slides/two_way_db_demo.html'"></section>
                 </section>
-                <section >
+                <section>
                     <section ng-include="'slides/directive.html'"></section> 
                     <section ng-include="'slides/directive_animation.html'"></section>
                     <section ng-include="'slides/directive_2.html'"></section>
                 </section>
                 <section  ng-include="'slides/dom_manipulation.html'"></section>
-                <section   data-background="resources/live_code.gif" ng-include="'slides/live_code.html'"></section>
+                <section data-background="resources/live_code.gif">
+                    <section  ng-include="'slides/live_code.html'"></section>
+                </section>
 
             </div>
         </div>
+        <!-- build:js head.js -->
         <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
-        <script>
+        <script src="reveal.js"></script>
 
-        </script>
+        <!-- build:js lib.js -->
     </body>
 </html>
 

@@ -35,7 +35,9 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/notes/notes.js', async: true}
             ]
         });
-    }, 1000)
+       
+
+    }, 3000)
 
 
 })

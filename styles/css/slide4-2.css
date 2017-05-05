@@ -41,24 +41,28 @@
 .bindingFeature img {
   left: -50%;
   margin-left: -45px !important; }
+
 .bindingFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 0); }
 
 .reuseFeature img {
   left: -140px;
   width: 600px; }
+
 .reuseFeature.visible:not(.current-fragment) {
   transform: translate(400px, 0); }
 
 .domManipulationFeature img {
   left: -50%;
   margin-left: -45px !important; }
+
 .domManipulationFeature.visible:not(.current-fragment) {
   transform: translate(400px, 300px); }
 
 .pluginFeature img {
   left: -50%;
   margin-left: -45px !important; }
+
 .pluginFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 300px); }
 

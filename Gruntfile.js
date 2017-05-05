@@ -1,21 +1,22 @@
 /* global module:false */
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     var port = grunt.option('port') || 8000;
     var root = grunt.option('root') || '.';
 
-    if (!Array.isArray(root)) root = [root];
+    if (!Array.isArray(root))
+        root = [root];
 
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
             banner: '/*!\n' +
-                ' * reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n' +
-                ' * http://lab.hakim.se/reveal-js\n' +
-                ' * MIT licensed\n' +
-                ' *\n' +
-                ' * Copyright (C) 2016 Hakim El Hattab, http://hakim.se\n' +
-                ' */'
+                    ' * reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n' +
+                    ' * http://lab.hakim.se/reveal-js\n' +
+                    ' * MIT licensed\n' +
+                    ' *\n' +
+                    ' * Copyright (C) 2016 Hakim El Hattab, http://hakim.se\n' +
+                    ' */'
         },
 
         qunit: {
@@ -31,7 +32,6 @@ module.exports = function(grunt) {
                 dest: 'js/reveal.min.js'
             }
         },
-
 
         autoprefixer: {
             dist: {
@@ -136,13 +136,13 @@ module.exports = function(grunt) {
                     sourcemap: 'none'
                 },
                 files: [{
-                    expand: true,
-                    cwd: 'styles/scss',
-                    src: ['*.scss'],
-                    ext: '.css',
-                    dest: 'styles/css',
+                        expand: true,
+                        cwd: 'styles/scss',
+                        src: ['*.scss'],
+                        ext: '.css',
+                        dest: 'styles/css',
 
-                }]
+                    }]
             }
         },
         wiredep: {
@@ -153,7 +153,7 @@ module.exports = function(grunt) {
                 // you run `grunt wiredep`
                 src: [
                     'index.html' // .html support...
-                   
+
                 ],
 
                 options: {
@@ -163,8 +163,56 @@ module.exports = function(grunt) {
                     // https://github.com/taptapship/wiredep#configuration
                 }
             }
-        }
+        },
+        useminPrepare: {
+            html: 'index.html',
+            options: {
+                dest: 'target',
+                flow: {
+                    html: {
+                        steps: {
+                            js: ['concat', 'uglifyjs'],
+                            css: ['cssmin']
+                        },
+                        post: {}
+                    }
+                }
+            }
+        },
 
+        usemin: {
+            html: ['target/index.html'],
+            css: ['target/app.css'],
+            js: ['target/app.js']
+        },
+//        ngmin: {
+//
+//            directives: {
+//                expand: true,
+//                cwd: 'target/',
+//                src: ['**/*.js'],
+//                dest: 'target/'
+//            }
+//        },
+        uglify: {
+            options: {
+                mangle: false
+            }},
+
+        copy: {
+            main: {
+                files: [
+                    // includes files within path
+                    {expand: true, src: ['index.html'], dest: 'target/'},
+                    {expand: true, src: ['lib/**'], dest: 'target/'},
+                    {expand: true, src: ['js/**'], dest: 'target/'},
+                    {expand: true, src: ['resources/**'], dest: 'target/'},
+                    {expand: true, src: ['plugin/**'], dest: 'target/'},
+                    {expand: true, src: ['slides/**'], dest: 'target/'},
+                    {expand: true,cwd:"lib/font/source-sans-pro", src: ['**'], dest: 'target/'},
+                ],
+            },
+        },
 
     });
 
@@ -180,6 +228,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-retire');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-wiredep');
+    require('load-grunt-tasks')(grunt);
+
+
 
     // Default task
     grunt.registerTask('default', ['css', 'js']);
@@ -200,9 +251,18 @@ module.exports = function(grunt) {
     grunt.registerTask('package', ['default', 'zip']);
 
     // Serve presentation locally
-    grunt.registerTask('serve', ['connect','wiredep', 'watch']);
+    grunt.registerTask('serve', ['connect', 'wiredep', 'watch']);
 
     // Run tests
     grunt.registerTask('test', ['jshint', 'qunit']);
+    grunt.registerTask('build', [
+        'sass',
+        'useminPrepare',
+        'copy',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        'usemin'
+    ]);
 
 };
