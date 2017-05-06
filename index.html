@@ -14,7 +14,9 @@
         <script src="bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+        <script src="bower_components/swiper/dist/js/swiper.js"></script>
         <!-- endbower -->    
+        <script src="bower_components/swiper/dist/js/swiper.jquery.js"></script>
 
         <!-- endbuild --> 
 
@@ -28,6 +30,7 @@
         <script src="controllers/two_way_db_ctr.js"></script>
         <script src="controllers/directive.js"></script>
         <script src="controllers/mvc.js"></script>
+        <script src="controllers/other_features.js"></script>
         <script src="slides.js"></script>
         <script type="text/javascript" src="scripts/mvc.js"></script>
 
@@ -59,6 +62,8 @@
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
         <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+        <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css" />
         <!-- endbower -->
 
         <!-- endbuild -->
@@ -87,16 +92,20 @@
 
                 </section>
                 <section ng-include="'slides/4-2.html'"></section>
+                <section>
 
-                <section ng-include="'slides/5.html'">
+
+                    <section ng-include="'slides/5.html'">
+                    </section>
+                    <section data-state="otherFeatures" ng-include="'slides/other_features.html'" >
+                    </section>
                 </section>
 
                 <section  >
                     <section ng-include="'slides/core_features.html'" >
                     </section>
-                       <section ng-include="'slides/other_features.html'" >
-                    </section>
-                    
+
+
                 </section>
                 <section  ng-include="'slides/mvc-1.html'" data-state="mvcState">
                 </section>
@@ -117,7 +126,7 @@
 
                 <section >
                     <section ng-include="'slides/angular_2.html'"></section> 
-                   
+
                 </section>
             </div>
         </div>

@@ -2,7 +2,16 @@
   margin: auto !important;
   height: 500px;
   width: 1000px;
-  position: relative; }
+  /*    position:relative;*/ }
+  .features img {
+    height: 400px;
+    position: absolute;
+    bottom: 0; }
+    .features img.big-image {
+      height: 0px; }
+  .features .text {
+    position: absolute;
+    top: 0; }
   .features .feature {
     position: absolute;
     width: 100%;
@@ -49,3 +58,20 @@
   .features .feature4:not(.current-fragment) {
     right: 0;
     bottom: 0; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }

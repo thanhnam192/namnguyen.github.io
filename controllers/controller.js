@@ -7,6 +7,11 @@ app.controller("ctr", function ($scope, $timeout) {
         return slidesFolder + section.contain + ".html";
 
     };
+    function registerEvent() {
+
+       
+
+    }
     $timeout(function () {
         Reveal.initialize({
             controls: true,
@@ -35,9 +40,13 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/notes/notes.js', async: true}
             ]
         });
-       
+        registerEvent();
+
 
     }, 3000)
+
+
+
 
 
 })

@@ -19,7 +19,8 @@
     "angular-bootstrap-switch": "^0.5.2",
     "angular-carousel": "^1.0.1",
     "angular-touch": "1.5.6",
-    "animate.css": "master"
+    "animate.css": "master",
+    "swiper": "^3.4.2"
   },
   "repository": {
     "type": "git",

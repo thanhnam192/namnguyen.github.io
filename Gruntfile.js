@@ -109,7 +109,7 @@ module.exports = function (grunt) {
             },
 
             js: {
-                files: ['Gruntfile.js', 'js/reveal.js'],
+                files: ['Gruntfile.js', 'js/reveal.js','controlers/*.js'],
                 tasks: 'js'
             },
 
