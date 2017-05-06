@@ -5,7 +5,8 @@
 .absolute {
   position: absolute;
 }
-
+.why-choose{
+    
 .feature {
   span {
     width: 300px;
@@ -148,4 +149,7 @@
 @keyframes blur-image {
     from {opacity: 1;}
     to {opacity:0}
+}
+
+    
 }

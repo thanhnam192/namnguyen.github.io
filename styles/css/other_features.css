@@ -1,0 +1,51 @@
+.features {
+  margin: auto !important;
+  height: 500px;
+  width: 1000px;
+  position: relative; }
+  .features .feature {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: all 1s linear; }
+    .features .feature.visible {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .features .feature.visible .text {
+        transition: all 1s linear; }
+      .features .feature.visible:not(.current-fragment) {
+        width: auto;
+        height: auto; }
+        .features .feature.visible:not(.current-fragment) .text {
+          transform: scale(1); }
+      .features .feature.visible.current-fragment {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+        .features .feature.visible.current-fragment .cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background-color: rgba(34, 34, 34, 0.61); }
+        .features .feature.visible.current-fragment .text {
+          transform: scale(2); }
+  .features .feature1:not(.current-fragment) {
+    left: 0;
+    top: 0; }
+  .features .feature2:not(.current-fragment) {
+    right: 0;
+    top: 0; }
+  .features .feature3:not(.current-fragment) {
+    left: 0;
+    bottom: 0; }
+  .features .feature4:not(.current-fragment) {
+    right: 0;
+    bottom: 0; }

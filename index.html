@@ -54,6 +54,7 @@
         <link rel="stylesheet" href="styles/css/live-code.css">
         <link rel="stylesheet" href="styles/css/directive-animation.css">
         <link rel="stylesheet" href="styles/css/twoway.css">
+        <link rel="stylesheet" href="styles/css/other_features.css">
 
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
@@ -91,7 +92,13 @@
                 <section ng-include="'slides/5.html'">
                 </section>
 
-                <section ng-include="'slides/core_features.html'" data-background-transition="zoom" ></section>
+                <section  >
+                    <section ng-include="'slides/core_features.html'" >
+                    </section>
+                       <section ng-include="'slides/other_features.html'" >
+                    </section>
+                    
+                </section>
                 <section  ng-include="'slides/mvc-1.html'" data-state="mvcState">
                 </section>
                 <section>
@@ -110,11 +117,9 @@
 
             </div>
         </div>
-        <!-- build:js head.js -->
-        <script src="lib/js/head.min.js"></script>
-        <script src="reveal.js"></script>
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-        <!-- build:js lib.js -->
     </body>
 </html>
 

@@ -4,19 +4,19 @@
 .absolute {
   position: absolute; }
 
-.feature {
+.why-choose .feature {
   transition: all 1s linear !important;
   left: 50%;
   margin-left: -133px !important;
   position: absolute; }
-  .feature span {
+  .why-choose .feature span {
     width: 300px;
     height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto; }
-  .feature .span {
+  .why-choose .feature .span {
     width: 250px;
     border-radius: 50%;
     height: 250px;
@@ -25,7 +25,7 @@
     white-space: normal;
     display: inline-block;
     padding-top: 33px !important; }
-  .feature img {
+  .why-choose .feature img {
     transition: all 3s linear;
     width: 700px;
     display: block;
@@ -33,60 +33,60 @@
     max-width: initial;
     max-height: initial;
     position: absolute; }
-  .feature.visible:not(.current-fragment) img {
+  .why-choose .feature.visible:not(.current-fragment) img {
     animation-name: blur-image;
     animation-duration: 1s;
     animation-fill-mode: forwards; }
 
-.bindingFeature img {
+.why-choose .bindingFeature img {
   left: -50%;
   margin-left: -45px !important; }
 
-.bindingFeature.visible:not(.current-fragment) {
+.why-choose .bindingFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 0); }
 
-.reuseFeature img {
+.why-choose .reuseFeature img {
   left: -140px;
   width: 600px; }
 
-.reuseFeature.visible:not(.current-fragment) {
+.why-choose .reuseFeature.visible:not(.current-fragment) {
   transform: translate(400px, 0); }
 
-.domManipulationFeature img {
+.why-choose .domManipulationFeature img {
   left: -50%;
   margin-left: -45px !important; }
 
-.domManipulationFeature.visible:not(.current-fragment) {
+.why-choose .domManipulationFeature.visible:not(.current-fragment) {
   transform: translate(400px, 300px); }
 
-.pluginFeature img {
+.why-choose .pluginFeature img {
   left: -50%;
   margin-left: -45px !important; }
 
-.pluginFeature.visible:not(.current-fragment) {
+.why-choose .pluginFeature.visible:not(.current-fragment) {
   transform: translate(-400px, 300px); }
 
-.reduceCode {
+.why-choose .reduceCode {
   width: 500px;
   height: 300px;
   left: 375px;
   top: 59px; }
-  .reduceCode .text {
+  .why-choose .reduceCode .text {
     top: 100px;
     position: relative; }
 
-.arrow {
+.why-choose .arrow {
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
   position: absolute !important;
   width: 100px; }
 
-.left-top-arrow {
+.why-choose .left-top-arrow {
   left: 0;
   top: 0; }
 
-.left-bottom-arrow {
+.why-choose .left-bottom-arrow {
   left: 0;
   bottom: 0;
   -moz-transform: scaleY(-1);
@@ -96,7 +96,7 @@
   filter: FlipH;
   -ms-filter: "FlipV"; }
 
-.right-top-arrow {
+.why-choose .right-top-arrow {
   right: 0;
   top: 0;
   -moz-transform: scaleX(-1);
@@ -106,7 +106,7 @@
   filter: FlipH;
   -ms-filter: "FlipH"; }
 
-.right-bottom-arrow {
+.why-choose .right-bottom-arrow {
   right: 0;
   bottom: 0;
   transform: rotate(180deg); }
