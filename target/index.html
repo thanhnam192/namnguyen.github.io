@@ -33,12 +33,28 @@
 
 
                 </section>
-                <section ng-include="'slides/4-2.html'"></section>
+                <section>
+                    <section ng-include="'slides/4-2.html'">
+
+                    </section>
+                    <section data-state="otherFeatures" ng-include="'slides/other_features.html'" >
+                    </section>
+
+                </section>
+
+
 
                 <section ng-include="'slides/5.html'">
                 </section>
 
-                <section ng-include="'slides/core_features.html'" data-background-transition="zoom" ></section>
+
+
+                <section  >
+                    <section ng-include="'slides/core_features.html'" >
+                    </section>
+
+
+                </section>
                 <section  ng-include="'slides/mvc-1.html'" data-state="mvcState">
                 </section>
                 <section>
@@ -55,13 +71,16 @@
                     <section  ng-include="'slides/live_code.html'"></section>
                 </section>
 
+
+                <section >
+                    <section ng-include="'slides/angular_2.html'"></section> 
+
+                </section>
             </div>
         </div>
-        <!-- build:js head.js -->
-        <script src="lib/js/head.min.js"></script>
-        <script src="reveal.js"></script>
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-        <!-- build:js lib.js -->
     </body>
 </html>
 

@@ -7,6 +7,11 @@ app.controller("ctr", function ($scope, $timeout) {
         return slidesFolder + section.contain + ".html";
 
     };
+    function registerEvent() {
+
+       
+
+    }
     $timeout(function () {
         Reveal.initialize({
             controls: true,
@@ -35,9 +40,13 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/notes/notes.js', async: true}
             ]
         });
-       
+        registerEvent();
+
 
     }, 3000)
+
+
+
 
 
 })
@@ -252,4 +261,27 @@ app.directive('renderNestedHtml', function ($timeout) {
     }
 })
 
+app.controller('otherFeatures', function ($timeout) {
+    Reveal.addEventListener('slidechanged', function (event) {
+        console.log(1, event)
+
+    });
+    Reveal.addEventListener('otherFeatures', function (event) {
+        $timeout(function () {
+
+            var mySwiper = new Swiper('.swiper-container', {
+                speed: 1000,
+                spaceBetween: 100,
+                nextButton: ".swiper-button-next",
+                prevButton: ".swiper-button-prev",
+                  effect: 'flip',
+            })
+        }, 1000);
+        // TODO: Sprinkle magic
+    }, false);
+
+
+
+
+})
 
