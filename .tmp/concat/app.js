@@ -34,6 +34,7 @@ app.controller("ctr", function ($scope, $timeout) {
                         return !!document.querySelector('[data-markdown]');
                     }},
                 {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                        console.log("hello")
                         hljs.initHighlightingOnLoad();
                     }},
                 {src: 'plugin/zoom-js/zoom.js', async: true},
@@ -89,26 +90,6 @@ app.controller("ctr5", function ($scope) {
 
     ]
 });
-app.controller("domManipulation",function($scope){
-	$scope.classes=['text-primary','text-danger','text-success']
-    $scope.class='text-primary';
-	$scope.getClass=function(classString){
-	    try{
-            return JSON.parse(classString)
-
-        }catch(exception){
-	        return {};
-        }
-
-    }
-})
-app.controller("two_way_db",function($scope){
-	$scope.name = "AngularJS";
-
-    $scope.changeModel = function(){
-        $scope.name = "Everybody"
-    }
-})
 app.directive("searchField",function(){
     return {
         restrict : 'E',
@@ -126,6 +107,38 @@ app.directive("searchField",function(){
             $scope.onSubmit();
         }
     }
+})
+app.controller("domManipulation",function($scope){
+	$scope.classes=['text-primary','text-danger','text-success']
+    $scope.class='text-primary';
+	$scope.getClass=function(classString){
+	    try{
+            return JSON.parse(classString)
+
+        }catch(exception){
+	        return {};
+        }
+
+    }
+})
+app.controller("liveCodeInstallation", function ($timeout) {
+    Reveal.addEventListener('liveCodeInstallation', function () {
+        $timeout(function () {
+            console.log(123);
+            var mySwiper = new Swiper('.installation .swiper-container', {
+                speed: 1000,
+                spaceBetween: 100,
+                nextButton: ".installation .swiper-button-next",
+                prevButton: ".installation .swiper-button-prev",
+
+            })
+        }, 1000);
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    }, false);
+
+
 })
 app.controller('ctrlMVC', function ($timeout) {
   
@@ -262,10 +275,7 @@ app.directive('renderNestedHtml', function ($timeout) {
 })
 
 app.controller('otherFeatures', function ($timeout) {
-    Reveal.addEventListener('slidechanged', function (event) {
-        console.log(1, event)
-
-    });
+   
     Reveal.addEventListener('otherFeatures', function (event) {
         $timeout(function () {
 
@@ -284,4 +294,10 @@ app.controller('otherFeatures', function ($timeout) {
 
 
 })
+app.controller("two_way_db",function($scope){
+	$scope.name = "AngularJS";
 
+    $scope.changeModel = function(){
+        $scope.name = "Everybody"
+    }
+})

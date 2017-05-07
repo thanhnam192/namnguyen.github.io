@@ -1,8 +1,5 @@
 app.controller('otherFeatures', function ($timeout) {
-    Reveal.addEventListener('slidechanged', function (event) {
-        console.log(1, event)
-
-    });
+   
     Reveal.addEventListener('otherFeatures', function (event) {
         $timeout(function () {
 

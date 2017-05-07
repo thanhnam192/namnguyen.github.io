@@ -34,6 +34,7 @@ app.controller("ctr", function ($scope, $timeout) {
                         return !!document.querySelector('[data-markdown]');
                     }},
                 {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                        console.log("hello")
                         hljs.initHighlightingOnLoad();
                     }},
                 {src: 'plugin/zoom-js/zoom.js', async: true},

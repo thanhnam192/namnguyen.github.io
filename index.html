@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>AngularJS</title>
+        
         <!-- build:js lib.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
@@ -15,6 +16,7 @@
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
         <script src="bower_components/swiper/dist/js/swiper.js"></script>
+        <script src="bower_components/highlightjs/highlight.pack.js"></script>
         <!-- endbower -->    
         <script src="bower_components/swiper/dist/js/swiper.jquery.js"></script>
 
@@ -23,53 +25,63 @@
 
         <!-- build:js app.js -->
 
-        <script src="controllers/controller.js"></script>
-        <script src="controllers/ctr4.js"></script>
-        <script src="controllers/ctr5.js"></script>
-        <script src="controllers/dom_manipulation.js"></script>
-        <script src="controllers/two_way_db_ctr.js"></script>
-        <script src="controllers/directive.js"></script>
-        <script src="controllers/mvc.js"></script>
-        <script src="controllers/other_features.js"></script>
-        <script src="slides.js"></script>
-        <script type="text/javascript" src="scripts/mvc.js"></script>
 
+  <!-- injector:js -->
+  <script src="/controllers/controller.js"></script>
+  <script src="/controllers/ctr4.js"></script>
+  <script src="/controllers/ctr5.js"></script>
+  <script src="/controllers/directive.js"></script>
+  <script src="/controllers/dom_manipulation.js"></script>
+  <script src="/controllers/liveCodeInstallation.js"></script>
+  <script src="/controllers/mvc.js"></script>
+  <script src="/controllers/other_features.js"></script>
+  <script src="/controllers/two_way_db_ctr.js"></script>
+  <!-- endinjector -->
 
 
 
         <!-- endbuild -->
+        
+        
         <!-- build:css app.css -->
         <link rel="stylesheet" href="lib/css/bootstrap.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
-        <link rel="stylesheet" href="lib/css/zenburn.css">
         <link rel="stylesheet" href="lib/css/magic.css">
         <link rel="stylesheet" href="lib/css/bootstrap-switch.min.css">
-        <link rel="stylesheet" href="styles/css/slide2.css">
-        <link rel="stylesheet" href="styles/css/slide4-2.css">
-        <link rel="stylesheet" href="styles/css/slide5.css">
-        <link rel="stylesheet" href="styles/css/slides.css">
-        <link rel="stylesheet" href="styles/css/dom_manipulation.css">
-        <link rel="stylesheet" href="styles/css/search-field.css">
+      
         <link rel="stylesheet" href="css/namStyle.css">
-        <link rel="stylesheet" href="styles/css/mvc.css">
-        <link rel="stylesheet" href="styles/css/slide4.css">
-        <link rel="stylesheet" href="styles/css/live-code.css">
-        <link rel="stylesheet" href="styles/css/directive-animation.css">
-        <link rel="stylesheet" href="styles/css/twoway.css">
-        <link rel="stylesheet" href="styles/css/other_features.css">
+
 
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
         <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
         <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
         <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css" />
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/agate.css" />
         <!-- endbower -->
+        
+          <!-- injector:css -->
+          <link rel="stylesheet" href="/styles/css/directive-animation.css">
+          <link rel="stylesheet" href="/styles/css/dom_manipulation.css">
+          <link rel="stylesheet" href="/styles/css/installation.css">
+          <link rel="stylesheet" href="/styles/css/live-code.css">
+          <link rel="stylesheet" href="/styles/css/mvc.css">
+          <link rel="stylesheet" href="/styles/css/other_features.css">
+          <link rel="stylesheet" href="/styles/css/search-field.css">
+          <link rel="stylesheet" href="/styles/css/slide2.css">
+          <link rel="stylesheet" href="/styles/css/slide4-2.css">
+          <link rel="stylesheet" href="/styles/css/slide4.css">
+          <link rel="stylesheet" href="/styles/css/slide5.css">
+          <link rel="stylesheet" href="/styles/css/slides.css">
+          <link rel="stylesheet" href="/styles/css/twoway.css">
+          <!-- endinjector -->
 
         <!-- endbuild -->
 
 
-
+      
+      
 
 
 
@@ -128,6 +140,10 @@
                 <section data-background="resources/live_code.gif">
                     <section  ng-include="'slides/live_code.html'"></section>
                 </section>
+                <section >
+                    <section  ng-include="'slides/live_coding_agenda.html'"></section>
+                    <section  ng-include="'slides/live_coding_installation.html'"  data-state="liveCodeInstallation"></section>
+                </section>
 
 
                 <section >
@@ -138,6 +154,7 @@
         </div>
         <script src="js/head.min.js"></script>
         <script src="js/reveal.js"></script>
+
 
     </body>
 </html>

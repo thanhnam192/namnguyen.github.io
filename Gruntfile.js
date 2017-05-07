@@ -109,7 +109,7 @@ module.exports = function (grunt) {
             },
 
             js: {
-                files: ['Gruntfile.js', 'js/reveal.js','controlers/*.js'],
+                files: ['Gruntfile.js', 'js/reveal.js', 'controlers/*.js'],
                 tasks: 'js'
             },
 
@@ -209,10 +209,18 @@ module.exports = function (grunt) {
                     {expand: true, src: ['resources/**'], dest: 'target/'},
                     {expand: true, src: ['plugin/**'], dest: 'target/'},
                     {expand: true, src: ['slides/**'], dest: 'target/'},
-                    {expand: true,cwd:"lib/font/source-sans-pro", src: ['**'], dest: 'target/'},
+                    {expand: true, cwd: "lib/font/source-sans-pro", src: ['**'], dest: 'target/'},
                 ],
             },
         },
+        injector: {
+            options: {},
+            local_dependencies: {
+                files: {
+                    'index.html': ['controllers/*.js', 'styles/css/*.css'],
+                }
+            }
+        }
 
     });
 
@@ -251,11 +259,12 @@ module.exports = function (grunt) {
     grunt.registerTask('package', ['default', 'zip']);
 
     // Serve presentation locally
-    grunt.registerTask('serve', ['connect', 'wiredep', 'watch']);
+    grunt.registerTask('serve', ['connect', 'wiredep','injector', 'watch']);
 
     // Run tests
     grunt.registerTask('test', ['jshint', 'qunit']);
     grunt.registerTask('build', [
+        'injector',
         'sass',
         'useminPrepare',
         'copy',
