@@ -122,20 +122,22 @@ app.controller("domManipulation",function($scope){
     }
 })
 app.controller("liveCodeInstallation", function ($timeout) {
+    var mySwiper;
     Reveal.addEventListener('liveCodeInstallation', function () {
-        $timeout(function () {
-            console.log(123);
-            var mySwiper = new Swiper('.installation .swiper-container', {
-                speed: 1000,
-                spaceBetween: 100,
-                nextButton: ".installation .swiper-button-next",
-                prevButton: ".installation .swiper-button-prev",
+        if (mySwiper == null) {
+            $timeout(function () {
+                new Swiper('.installation .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".installation .swiper-button-next",
+                    prevButton: ".installation .swiper-button-prev",
 
-            })
-        }, 1000);
-        $('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
+                })
+            }, 1000);
+            $('pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
     }, false);
 
 
@@ -275,18 +277,21 @@ app.directive('renderNestedHtml', function ($timeout) {
 })
 
 app.controller('otherFeatures', function ($timeout) {
-   
+    var mySwiper;
     Reveal.addEventListener('otherFeatures', function (event) {
         $timeout(function () {
+            if (mySwiper == null) {
 
-            var mySwiper = new Swiper('.swiper-container', {
-                speed: 1000,
-                spaceBetween: 100,
-                nextButton: ".swiper-button-next",
-                prevButton: ".swiper-button-prev",
-                  effect: 'flip',
-            })
-        }, 1000);
+                new Swiper('.otherFeatures .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".otherFeatures .swiper-button-next",
+                    prevButton: ".otherFeatures .swiper-button-prev",
+                })
+
+            }
+
+        }, 2000);
         // TODO: Sprinkle magic
     }, false);
 
