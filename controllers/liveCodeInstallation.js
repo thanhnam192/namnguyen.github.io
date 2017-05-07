@@ -11,7 +11,7 @@ app.controller("liveCodeInstallation", function ($timeout) {
 
                 })
             }, 1000);
-            $('pre code').each(function (i, block) {
+            $('.installation pre code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         }

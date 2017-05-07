@@ -17,7 +17,6 @@ app.controller("ctr", function ($scope, $timeout) {
             controls: true,
             progress: true,
             history: true,
-            center: true,
             width: 1200,
             height: 700,
             transition: 'concave', // none/fade/slide/convex/concave/zoom
@@ -33,10 +32,7 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/markdown/markdown.js', condition: function () {
                         return !!document.querySelector('[data-markdown]');
                     }},
-                {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                        console.log("hello")
-                        hljs.initHighlightingOnLoad();
-                    }},
+              
                 {src: 'plugin/zoom-js/zoom.js', async: true},
                 {src: 'plugin/notes/notes.js', async: true}
             ]

@@ -5,6 +5,16 @@
 .reveal h2, .reveal h3, .reveal h4.h5, .reveal h6 {
   text-transform: initial; }
 
+.reveal pre {
+  background-color: #333333; }
+
+.reveal .controls .navigate-up, .reveal .controls .navigate-down {
+  display: none; }
+
+.reveal .controls .navigate-left, .reveal .controls .navigate-right {
+  bottom: 0px;
+  top: initial; }
+
 .form-control {
   color: black;
   font-size: 0.9em !important; }

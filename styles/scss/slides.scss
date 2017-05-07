@@ -4,10 +4,22 @@
 }
 .reveal {
     h2,h3,h4.h5,h6{
-            text-transform: initial;
+        text-transform: initial;
     }
-    
-    
+    pre{
+        background-color: #333333;
+
+    } 
+    .controls {
+        .navigate-up,.navigate-down{
+            display: none;
+        }
+        .navigate-left,.navigate-right{
+            bottom: 0px;
+            top:initial;
+        }
+    }
+
 }
 .form-control{
     color:black;
@@ -55,7 +67,7 @@ ul{
         @include animate-list(rotateInUpLeft,rotateInUpRight,rotateInDownLeft);  
 
     }
-     &.light-speed{
+    &.light-speed{
         @include animate-list(jackInTheBox,jackInTheBox,jackInTheBox);  
 
     } 
