@@ -60,6 +60,7 @@
     .left-arrow{
         top: 30px;
         left: 30px;
+        position: absolute;
     }
     .right-arrow{
         position: absolute;
@@ -75,10 +76,11 @@
         top: 10px;
         width: 100%;
         .model{
-            width: 150px;
             background-color: #009cd6;
+            width: 200px;
             padding: 30px;
             border-radius: 50%;
+            color: white;
         } 
 
     }
@@ -88,13 +90,11 @@
         width: 100%;
 
         .view{
-            width: 150px;
-
-
+            width: 200px;
             background-color: #84ce8c;
-
             padding: 30px;
             border-radius: 50%;
+            color: white;
         }  
     }
 

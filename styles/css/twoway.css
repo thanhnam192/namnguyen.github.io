@@ -44,7 +44,8 @@
       animation-iteration-count: infinite; }
   .twoway-db .left-arrow {
     top: 30px;
-    left: 30px; }
+    left: 30px;
+    position: absolute; }
   .twoway-db .right-arrow {
     position: absolute;
     top: 30px;
@@ -57,19 +58,21 @@
     top: 10px;
     width: 100%; }
     .twoway-db .model-wrapper .model {
-      width: 150px;
       background-color: #009cd6;
+      width: 200px;
       padding: 30px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      color: white; }
   .twoway-db .view-wrapper {
     position: absolute;
     top: 198px;
     width: 100%; }
     .twoway-db .view-wrapper .view {
-      width: 150px;
+      width: 200px;
       background-color: #84ce8c;
       padding: 30px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      color: white; }
 
 @keyframes arrow-animate-topdown {
   from {
