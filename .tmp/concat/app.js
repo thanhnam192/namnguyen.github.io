@@ -17,7 +17,6 @@ app.controller("ctr", function ($scope, $timeout) {
             controls: true,
             progress: true,
             history: true,
-            center: true,
             width: 1200,
             height: 700,
             transition: 'concave', // none/fade/slide/convex/concave/zoom
@@ -33,10 +32,7 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/markdown/markdown.js', condition: function () {
                         return !!document.querySelector('[data-markdown]');
                     }},
-                {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                        console.log("hello")
-                        hljs.initHighlightingOnLoad();
-                    }},
+              
                 {src: 'plugin/zoom-js/zoom.js', async: true},
                 {src: 'plugin/notes/notes.js', async: true}
             ]
@@ -121,6 +117,48 @@ app.controller("domManipulation",function($scope){
 
     }
 })
+app.controller("liveCodeDirective", function ($timeout) {
+    var mySwiper;
+    Reveal.addEventListener('liveCodeDirective', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                new Swiper('.live-code-directive .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".live-code-directive .swiper-button-next",
+                    prevButton: ".live-code-directive .swiper-button-prev",
+
+                })
+            }, 1000);
+            $('.live-code-directive pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    }, false);
+
+
+})
+app.controller("liveCodeDom", function ($timeout) {
+    var mySwiper;
+    Reveal.addEventListener('liveCodeDom', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                new Swiper('.live-code-dom .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".live-code-dom .swiper-button-next",
+                    prevButton: ".live-code-dom .swiper-button-prev",
+
+                })
+            }, 1000);
+            $('.live-code-dom pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    }, false);
+
+
+})
 app.controller("liveCodeInstallation", function ($timeout) {
     var mySwiper;
     Reveal.addEventListener('liveCodeInstallation', function () {
@@ -134,7 +172,28 @@ app.controller("liveCodeInstallation", function ($timeout) {
 
                 })
             }, 1000);
-            $('pre code').each(function (i, block) {
+            $('.installation pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    }, false);
+
+
+})
+app.controller("liveCodeRouting", function ($timeout) {
+    var mySwiper;
+    Reveal.addEventListener('liveCodeRouting', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                new Swiper('.live-code-routing .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".live-code-routing .swiper-button-next",
+                    prevButton: ".live-code-routing .swiper-button-prev",
+
+                })
+            }, 1000);
+            $('.live-code-routing pre code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         }
