@@ -5,20 +5,48 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide">
-                <div class="text">1. From view to model by using <b>ng-model="modelName"</b>
+                <div class="text">1. Create directive with name <b>"searchField"</b>
                     <pre>
-                        <code data-trim data-noescape class="html">
-                            &lt;input ng-model="modelName"&gt;
-                        </code>
+<code data-trim class="js" data-noescape>
+app.directive(&quot;searchField&quot;,function(){
+    return {
+        restrict : &quot;E&quot;,
+        scope:{value:&quot;@&quot;},
+        templateUrl : &quot;search-field.html&quot;,
+        controller : function($scope){
+            $scope.result = &quot;Result:&quot;;
+            $scope.onSubmit = function(){
+             $scope.result = &quot;Result:&quot;+$scope.value;
+            }
+        }
+    }
+})
+</code>
                     </pre>
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="text">2. From model to view by using <b ng-non-bindable>{{modelName}}</b>
+                <div class="text">2. Create search-field.html template &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <pre>
-                        <code data-trim data-noescape class="html">
-                        &lt;div&gt;<span ng-non-bindable>{{modelName}}</span>&lt;/div&gt;                      
-                    </code>
+<code data-trim data-noescape class="html">
+&ltdiv&gt
+    &ltinput type=&quot;text&quot; ng-model=&quot;value&quot;/&gt
+    &ltbutton ng-click=&quotonSubmit()&quot&gtSearch&lt/button&gt
+    &ltb ng-bind=&quot;result&quot;&gt&lt/b&gt
+&lt/div&gt
+    
+</code>
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="text">3.Use directive &ltsearch-field&gt
+                    <pre>
+<code data-trim data-noescape class="html">
+&ltsearch-field&gt&lt/search-field&gt
+    
+</code>
                     </pre>
                 </div>
             </div>
