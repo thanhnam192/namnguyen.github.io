@@ -6,17 +6,15 @@
             <!-- Slides -->
             <div class="swiper-slide">
                 <div class="text">1. Create directive with name <b>"searchField"</b>
-                    <pre>
+                    <pre style="width: 800px">
 <code data-trim class="js" data-noescape>
 app.directive(&quot;searchField&quot;,function(){
     return {
-        restrict : &quot;E&quot;,
-        scope:{value:&quot;@&quot;},
         templateUrl : &quot;search-field.html&quot;,
         controller : function($scope){
-            $scope.result = &quot;Result:&quot;;
+            $scope.modelName = "Value 1"
             $scope.onSubmit = function(){
-             $scope.result = &quot;Result:&quot;+$scope.value;
+               $scope.outputName = "Output"+ $scope.modelName
             }
         }
     }
@@ -27,14 +25,13 @@ app.directive(&quot;searchField&quot;,function(){
             </div>
             <div class="swiper-slide">
                 <div class="text">2. Create search-field.html template &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <pre>
+                    <pre >
 <code data-trim data-noescape class="html">
 &ltdiv&gt
-    &ltinput type=&quot;text&quot; ng-model=&quot;value&quot;/&gt
-    &ltbutton ng-click=&quotonSubmit()&quot&gtSearch&lt/button&gt
-    &ltb ng-bind=&quot;result&quot;&gt&lt/b&gt
-&lt/div&gt
-    
+    &lt;input type=&quot;text&quot; ng-model=&quot;modelName&quot;/&gt;
+    &lt;button ng-click=&quotonSubmit()&quot;&gtSubmit&lt;/button&gt;
+    &lt;div&gt;<span ng-non-bindable>{{outputName}}</span>&lt;/div&gt;  
+&lt/div&gt    
 </code>
                     </pre>
                 </div>
@@ -44,8 +41,7 @@ app.directive(&quot;searchField&quot;,function(){
                 <div class="text">3.Use directive &ltsearch-field&gt
                     <pre>
 <code data-trim data-noescape class="html">
-&ltsearch-field&gt&lt/search-field&gt
-    
+&ltsearch-field&gt&lt/search-field&gt    
 </code>
                     </pre>
                 </div>

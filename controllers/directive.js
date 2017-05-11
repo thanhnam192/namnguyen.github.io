@@ -1,7 +1,6 @@
 app.directive("searchField",function(){
     return {
-        restrict : 'E',
-        scope:{value:"@"},
+        scope:{value:"@"}, 
         template : '<div class="form-inline input-group-lg">' +
             '<input type="text" ng-model="value" class="nam_text form-control" />' +
             '<button class="nam_btn btn btn-primary btn-lg" ng-click="onSubmit()" >Search</button>' +

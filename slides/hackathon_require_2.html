@@ -1,0 +1,67 @@
+<div class="hackathon-demo" ng-controller="hackathonDemo">
+
+    <div ng-if="isShowList" class="animate animate-right">
+        <div class="container-fluid" style="padding:50px">
+            <div class="btn btn-success btn-circle" ng-click="addNew()">+</div>
+            <div class="list-group">
+                <button type="button" class="list-group-item" ng-click="read()">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div><b>First item</b></div>
+                    <div>First item</div>
+                </button>
+            </div> 
+        </div>
+
+    </div>
+    <div ng-if="isShowAdd" class="animate animate-left">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <textarea class="form-control" id="exampleInputPassword1" rows="3">
+                </textarea>
+
+            </div>
+            <button ng-click="create()" class="btn btn-default">Submit</button>
+        </form>
+
+
+    </div>
+    <div ng-if="isShowRead" class="animate animate-left">
+        <div style="text-align: left" ng-click="showList()">&lt;Back</div>
+        <h1>Title</h1>
+        <p>Description</p>
+        
+        
+    </div>
+
+
+
+
+</div>
