@@ -1,0 +1,46 @@
+<div class="hackathon-demo" ng-controller="hackathonDemo">
+    <img src="resources/imac.png" class="imac">
+    <div class="wrapper">
+    <div ng-if="isShowList" class="animate animate-right">
+                    <div class="btn btn-success btn-circle" ng-click="addNew($event)">+</div>
+
+        <div class="container-fluid">
+            <div class="list-group">
+                <button type="button" class="list-group-item " ng-click="read(item)" ng-repeat="item in list track by $index">
+                    <div><b>{{item.note}}</b></div>
+                    <div>{{item.desc}}</div>
+                </button>
+              
+            </div> 
+        </div>
+
+    </div>
+    <div ng-if="isShowAdd" class="animate animate-left add-note">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input ng-model="addNote.note"  class="form-control" id="exampleInputEmail1" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <textarea ng-model="addNote.desc" class="form-control" id="exampleInputPassword1" rows="3">
+                </textarea>
+
+            </div>
+            <button ng-click="create()" class="btn btn-primary">Submit</button>
+        </form>
+
+
+    </div>
+    <div ng-if="isShowRead" class="animate animate-left read-note">
+        <div style="text-align: left" ng-click="showList()">&lt;Back</div>
+        <h1>{{selectedNote.note}}</h1>
+        <p>{{selectedNote.desc}}</p>
+        
+        
+    </div>
+
+</div>
+
+
+</div>

@@ -1,5 +1,12 @@
-var app = angular.module("app", ['ngAnimate', 'ngTouch', 'angular-carousel', 'frapontillo.bootstrap-switch']);
+var app = angular.module("app", ['ngAnimate', 'ngTouch', 'angular-carousel', 'frapontillo.bootstrap-switch','ngMaterial']);
+app.config(function($mdThemingProvider) {
+ $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+
+
+});
 app.controller("ctr", function ($scope, $timeout) {
+    
     var slidesFolder = "slides/";
 
 

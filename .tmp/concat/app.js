@@ -116,6 +116,61 @@ app.controller("domManipulation",function($scope){
 
     }
 })
+app.controller("hackathonDemo", function ($scope) {
+
+    $scope.list = [
+        {note: "Note 1",
+            desc: "Description 1"
+
+        },
+        {note: "Note 2",
+            desc: "Description 3"
+
+        },
+        {note: "Note 3",
+            desc: "Description 3"
+
+        },
+        {note: "Note 4",
+            desc: "Description 4"
+
+        },
+        {note: "Note 5",
+            desc: "Description 5"
+
+        },
+    ]
+
+    $scope.isShowList = true;
+    $scope.addNew = function ($event) {
+        $event.stopPropagation();
+        $scope.addNote = {}
+        $scope.isShowList = false;
+        $scope.isShowAdd = true;
+        $scope.isShowRead = false;
+
+
+    }
+
+    $scope.read = function (item) {
+        $scope.selectedNote = item;
+        $scope.isShowList = false;
+        $scope.isShowAdd = false;
+        $scope.isShowRead = true;
+
+    }
+    $scope.create = function () {
+        $scope.list.push($scope.addNote)
+        $scope.showList();
+    }
+    $scope.showList = function () {
+        $scope.isShowList = true;
+        $scope.isShowAdd = false;
+        $scope.isShowRead = false;
+    }
+
+
+})
 app.controller("liveCodeDirective", function ($timeout) {
     var mySwiper;
     Reveal.addEventListener('liveCodeDirective', function () {
