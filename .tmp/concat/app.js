@@ -1,5 +1,12 @@
-var app = angular.module("app", ['ngAnimate', 'ngTouch', 'angular-carousel', 'frapontillo.bootstrap-switch']);
+var app = angular.module("app", ['ngAnimate', 'ngTouch', 'angular-carousel', 'frapontillo.bootstrap-switch','ngMaterial']);
+app.config(function($mdThemingProvider) {
+ $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+
+
+});
 app.controller("ctr", function ($scope, $timeout) {
+    
     var slidesFolder = "slides/";
 
 
@@ -119,28 +126,34 @@ app.controller("domManipulation",function($scope){
 app.controller("hackathonDemo", function ($scope) {
 
     $scope.list = [
-        {note: "Note 1",
-            desc: "Description 1"
+        {note: "Axon Active",
+            desc: "Awesome"
 
-        },
-        {note: "Note 2",
-            desc: "Description 3"
+        }
 
-        },
-        {note: "Note 3",
-            desc: "Description 3"
 
-        },
-        {note: "Note 4",
-            desc: "Description 4"
 
-        },
-        {note: "Note 5",
-            desc: "Description 5"
-
-        },
     ]
+    $scope.colors = [
+        {
+            color: "white",
+            name: "White"
+        },
+        {
+            color: "#29b6f6",
+            name: "Blue"
+        },
+        {
+            color: "#8bc34a",
+            name: "Light green"
+        },
+        {
+            color: "#cddc39",
+            name: "Lime"
+        }
 
+    ]
+    
     $scope.isShowList = true;
     $scope.addNew = function ($event) {
         $event.stopPropagation();

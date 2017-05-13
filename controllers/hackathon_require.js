@@ -1,40 +1,50 @@
 app.controller("hackathonDemo", function ($scope) {
 
     $scope.list = [
-        {note: "Note 1",
-            desc: "Description 1"
+        {note: "Axon Active",
+            desc: "Awesome"
 
-        },
-        {note: "Note 2",
-            desc: "Description 3"
+        }
 
-        },
-  
-      
+
+
     ]
     $scope.colors = [
         {
-            color:"#29b6f6",
+            color: "white",
+            name: "White"
+        },
+        {
+            color: "#29b6f6",
             name: "Blue"
         },
         {
-            color:"#8bc34a",
+            color: "#8bc34a",
             name: "Light green"
         },
         {
-            color:"#cddc39"            ,
+            color: "#cddc39",
             name: "Lime"
         }
 
     ]
+
     $scope.isShowList = true;
     $scope.addNew = function ($event) {
+        $scope.originalItem = null
         $event.stopPropagation();
-        $scope.addNote = {}
         $scope.isShowList = false;
         $scope.isShowAdd = true;
         $scope.isShowRead = false;
+        $scope.addNote = {}
 
+    }
+    $scope.edit = function (item) {
+        $scope.originalItem = item;
+        $scope.addNote = angular.copy(item);
+        $scope.isShowList = false;
+        $scope.isShowAdd = true;
+        $scope.isShowRead = false;
 
     }
 
@@ -46,7 +56,16 @@ app.controller("hackathonDemo", function ($scope) {
 
     }
     $scope.create = function () {
-        $scope.list.push($scope.addNote)
+        if (   $scope.originalItem == null) {
+            $scope.list.push($scope.addNote)
+
+        } else {
+            console.log("edit")
+            $scope.originalItem.note = $scope.addNote.note
+            $scope.originalItem.desc = $scope.addNote.desc
+            $scope.originalItem.color = $scope.addNote.color
+        }
+        $scope.originalItem = null
         $scope.showList();
     }
     $scope.showList = function () {
